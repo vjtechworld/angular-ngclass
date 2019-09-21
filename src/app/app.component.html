@@ -1,0 +1,32 @@
+<!-- Attribute Directive ngClass in Angular -->
+<!-- ngClass in static way -->
+<!-- This will apply the class name description to the div -->
+<div [ngClass]="{'description':true}">VJ Tech Diary</div>
+
+<!-- The Above code snippet is equivalent to following HTML -->
+<div class="description">VJ Tech Diary</div>
+
+<!-- ngClass with multiple properties -->
+<div [ngClass]="{'description':'true', 'descriptionfont':'true'}">VJ Tech Diary</div>
+
+<!-- The Above code snippet is equivalent to following HTML -->
+<div class="description descriptionfont">VJ Tech Diary</div>
+
+<!-- bootstrap classes also can be applied directly -->
+<div [ngClass]="{'text-success': true}">VJ Tech Diary</div>
+
+
+
+<!-- Applying ngClass in dynamic nature based on some condition -->
+<div>Displying values from the Array courseArray.</div>
+    <ul *ngFor="let course of courseArray">
+        <li [ngClass]="{
+            'text-success':course.id === 1,
+            'text-primary':course.id === 2
+          }">Id : {{course.id}} & Name : {{ course.name }}</li>
+    </ul>
+
+<!-- Applying ngClass in dynamic nature calling via function -->
+<div [ngClass]="applyCSSClasses()">VJ Tech Diary - Applying CSS via function call</div>
+
+<router-outlet></router-outlet>
